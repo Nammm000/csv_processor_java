@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  csv-processor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: csv-processor:latest
+    container_name: csv-processor
+
+    # Mount current directory for input/output files
+    volumes:
+      - .:/data:rw
+
+    # Resource limits (adjust based on your needs)
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2G
+        reservations:
+          cpus: '1'
+          memory: 1G
+
+    # Default command - override when running
+    command: ["ad_data.csv"]
+
+    # Environment variables
+    environment:
+      - JAVA_OPTS=-Xmx1g -Xms512m
+
+    # Restart policy
+    restart: "no"
