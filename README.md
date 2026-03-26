@@ -11,6 +11,8 @@ mvn clean package
 # With ad_data.csv in root directory
 java -jar target/csv-processor-1.0-SNAPSHOT.jar ad_data.csv
 
+Running
+![img_1.png](img_1.png)
 Architecture                                                                                                                                                                
 ├── Main.java           # Entry point & argument validation
 ├── Processor.java      # Core processing logic & aggregation
