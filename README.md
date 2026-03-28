@@ -1,15 +1,19 @@
 # To run this program:
-1, Use docker
-docker-compose build # Build the image
-docker-compose run csv-processor ad_data.csv # Run with ad_data.csv file in root directory
+1, Use docker:
+- docker-compose build // Build the image
+- docker-compose run csv-processor ad_data.csv // Run with ad_data.csv file in root directory
 
 2, Without docker:
-mvn clean package
-// Delete previously built artifacts and then compile, test, and package
-// target/csv-processor-1.0-SNAPSHOT.jar
 
-java -jar target/csv-processor-1.0-SNAPSHOT.jar ad_data.csv
-// With ad_data.csv in root directory
+- mvn clean package
+
+    // Delete previously built artifacts and then compile, test, and package 
+
+  // target/csv-processor-1.0-SNAPSHOT.jar
+
+- java -jar target/csv-processor-1.0-SNAPSHOT.jar ad_data.csv 
+
+  // With ad_data.csv in root directory
 
 Running
 ![img_1.png](img_1.png)
